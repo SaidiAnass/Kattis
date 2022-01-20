@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        int N = 0 ;
+        double q=0, y=0, QALY=0;
+        
+        Scanner scan = new Scanner(System.in);
+        N = scan.nextInt();
+        
+        for(int i=0; i<N; i++) {
+            
+                q = scan.nextDouble();
+                y = scan.nextDouble();
+                QALY += q*y;
+        }
+        
+        System.out.println(QALY);
+    }
+
+}
