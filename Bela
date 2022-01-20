@@ -1,0 +1,62 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    int n, sum=0;
+    char suit;
+
+    scanf("%d", &n);
+    scanf(" %c", &suit);
+    n *= 4;
+
+    char a = suit;
+
+    for(int i=0; i<n; i++) {
+
+        char input[2];
+        scanf("%s", &input);
+
+        switch(input[0]){
+
+            case 'A' :
+                sum += 11;
+                break;
+            case 'K' :
+                sum += 4;
+                break;
+            case 'Q' :
+                sum += 3;
+                break;
+            case 'J' :
+                if(input[1] == a) {
+                    sum += 20 ;
+                }
+                else {
+                    sum += 2;
+                }
+                break;
+            case 'T' :
+                sum += 10;
+                break;
+            case '9' :
+                if(input[1]==a) {
+                    sum += 14 ;
+                }
+                break;
+            case '8' :
+                break;
+            case '7' :
+                break;
+        }
+    }
+
+    printf("%d", sum);
+
+
+
+
+
+    return 0;
+}
