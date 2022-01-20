@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        String input = sc.nextLine();
+        int NumT = 0, NumC = 0, NumG = 0, howMany = 0;
+        int result;
+        
+        if(input.contains("T") && input.contains("C") && input.contains("G") ) {
+            
+            for(int i=0; i<input.length(); i++) {
+                if(input.charAt(i) == 'T') {
+                    NumT ++;
+                }
+                else if(input.charAt(i) == 'C') {
+                    NumC++;
+                }
+                else if(input.charAt(i) == 'G') {
+                    NumG++;
+                }
+            }
+            
+            howMany = Math.min(NumT, Math.min(NumC, NumG));
+            result = (int)(Math.pow(NumT, 2) + Math.pow(NumC, 2) + Math.pow(NumG, 2)) + (7*howMany);
+            
+            System.out.println(result);
+        }
+        
+        else {
+            
+            for(int i=0; i<input.length(); i++) {
+                if(input.charAt(i) == 'T') {
+                    NumT ++;
+                }
+                else if(input.charAt(i) == 'C') {
+                    NumC++;
+                }
+                else if(input.charAt(i) == 'G') {
+                    NumG++;
+                }
+            }
+            
+            result = (int)(Math.pow(NumT, 2) + Math.pow(NumC, 2) + Math.pow(NumG, 2));
+            
+            System.out.println(result);
+        }
+        
+        sc.close();
+    }
+}
