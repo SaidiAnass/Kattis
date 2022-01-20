@@ -1,0 +1,27 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main() {
+
+
+    int n, d, number, nO, dO;
+
+    while(scanf("%d%d", &n, &d)) {
+
+        if(n == 0 && d == 0) {
+            goto end;
+        }
+        else {
+            nO = n%d;
+            number = (n-nO)/d;
+        }
+
+        printf("%d %d / %d \n", number, nO, d);
+
+    }
+
+end :
+    return 0;
+}
