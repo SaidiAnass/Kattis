@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> Table = new ArrayList<>();
+        
+        int k = 1;
+        while(sc.hasNext()) {
+            int n = sc.nextInt();
+            for(int i=0; i<n; i++) {
+                Table.add(sc.nextInt());
+            }
+            System.out.println("Case " + k + ": " + Collections.min(Table) + " " + Collections.max(Table) + " " + (Collections.max(Table)-Collections.min(Table)));
+            Table.clear();
+            
+            k++;
+        }
+                
+        sc.close();
+    }
+}
