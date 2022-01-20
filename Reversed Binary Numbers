@@ -1,0 +1,90 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();
+        
+        String binary = Integer.toBinaryString(input);
+                
+        char[] binaryT = new char[binary.length()];
+        char[] RbinaryT = new char[binary.length()];
+        
+        for(int i=0; i<binary.length(); i++) {
+            binaryT[i] = binary.charAt(i);
+        }
+        
+        for(int j=0; j<binary.length(); j++) {
+            RbinaryT[j] = binaryT[binary.length()-j-1]; 
+        }
+        
+        String result = String.valueOf(RbinaryT);
+        
+        System.out.println(Integer.parseInt(result,2));
+        sc.close();
+    }
+
+}
+
+---------------------------SECOND METHOD-------------------------------------------
+
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static String toBinary(int x) {
+        
+        String result = "";
+        List<Integer> Binary = new ArrayList<>();
+        while(x>=2) {
+            Binary.add(0, x%2);
+            x = x/2;
+        }
+        Binary.add(0, x);
+        
+        for(int i=0; i<Binary.size(); i++) {
+            result += Binary.get(i);
+        }
+        
+        return result;
+    }
+    
+    public static int fromBinary(String B) {
+        
+        int result = 0;
+        
+        for(int i=0; i<B.length(); i++) {
+            
+            result += ((int)B.charAt(i)-48)*((int)Math.pow(2,B.length()-1-i));
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        String a, c;
+        
+        
+        a = toBinary(n);
+        char[] b = new char[a.length()];
+        
+        int j=0;
+        for(int i=a.length()-1; i>=0; i--) {
+            
+            b[j] = a.charAt(i);
+            j++;
+        }
+        
+        c = String.valueOf(b);
+        
+        System.out.println(fromBinary(c));
+            
+        sc.close();
+    }
+
+}
