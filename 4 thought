@@ -1,0 +1,92 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <unordered_map>
+
+using namespace std;
+
+int main()
+{
+    int n, a;
+
+    cin >> n;
+
+    for(int i=0; i<n; i++) {
+        cin >> a;
+
+        switch(a) {
+
+            case -60 :
+                cout << "4 - 4 * 4 * 4 = " << a << endl ;
+                break;
+            case -16 :
+                cout << "4 - 4 - 4 * 4 = " << a << endl ;
+                break;
+            case -15 :
+                cout << "4 / 4 - 4 * 4 = " << a << endl ;
+                break;
+            case -8 :
+                cout << "4 - 4 - 4 - 4 = " << a << endl ;
+                break;
+            case -7 :
+                cout << "4 / 4 - 4 - 4 = " << a << endl ;
+                break;
+            case -4 :
+                cout << "4 / 4 / 4 - 4 = " << a << endl ;
+                break;
+            case -1 :
+                cout << "4 - 4 - 4 / 4 = " << a << endl ;
+                break;
+            case 0 :
+                cout << "4 - 4 - 4 + 4 = " << a << endl ;
+                break;
+            case 1 :
+                cout << "4 / 4 * 4 / 4 = " << a << endl ;
+                break;
+            case 2 :
+                cout << "4 / 4 + 4 / 4 = " << a << endl ;
+                break;
+            case 4 :
+                cout << "4 / 4 / 4 + 4 = " << a << endl ;
+                break;
+            case 7 :
+                cout << "4 + 4 - 4 / 4 = " << a << endl ;
+                break;
+            case 8 :
+                cout << "4 + 4 + 4 - 4 = " << a << endl ;
+                break;
+            case 9 :
+                cout << "4 + 4 + 4 / 4 = " << a << endl ;
+                break;
+            case 15 :
+                cout << "4 * 4 - 4 / 4 = " << a << endl ;
+                break;
+            case 16 :
+                cout << "4 + 4 + 4 + 4 = " << a << endl ;
+                break;
+            case 17 :
+                cout << "4 * 4 + 4 / 4 = " << a << endl ;
+                break;
+            case 24 :
+                cout << "4 + 4 + 4 * 4 = " << a << endl ;
+                break;
+            case 32 :
+                cout << "4 * 4 + 4 * 4 = " << a << endl ;
+                break;
+            case 60 :
+                cout << "4 * 4 * 4 - 4 = " << a << endl ;
+                break;
+            case 68 :
+                cout << "4 * 4 * 4 + 4 = " << a << endl ;
+                break;
+            case 256 :
+                cout << "4 * 4 * 4 * 4 = " << a << endl ;
+                break;
+            default :
+                cout << "no solution " << endl;
+                break;
+        }
+    }
+
+    return 0;
+}
