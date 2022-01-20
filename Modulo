@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        ArrayList<Integer> Table = new ArrayList<>();
+        ArrayList<Integer> NewTable = new ArrayList<>();
+        
+        for(int i=0; i<10; i++) {
+            Table.add(sc.nextInt()%42);
+        }
+        
+//      for(int i=0; i<Table.size()-1; i++) {
+//          for(int j=i+1; j<Table.size(); j++) {
+//              if(Table.get(i) == Table.get(j) && !NewTable.contains(Table.get(i))) {
+//                  NewTable.add(Table.get(i));
+//              }
+//              else if(!NewTable.contains(Table.get(i))) {
+//                  NewTable.add(Table.get(i));
+//              }
+//          }
+//      }
+        
+        for(int i : Table) {
+            if(!NewTable.contains(i)) {
+                NewTable.add(i);
+            }
+        }
+        
+        System.out.println(NewTable.size());
+        
+        
+        sc.close();
+    }
+
+}
