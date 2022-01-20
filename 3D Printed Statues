@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        int numberOfStatues, numberOfPrinters = 1, days = 0;
+        
+        Scanner scan = new Scanner(System.in);
+        
+        numberOfStatues = scan.nextInt();
+        
+        while(numberOfPrinters < numberOfStatues) {
+            numberOfPrinters *= 2 ;
+            days++ ;
+        }
+        
+        System.out.println(days+1);
+    }
+
+}
