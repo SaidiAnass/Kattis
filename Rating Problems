@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        float SumMax = 0, SumMin = 0, Sum = 0 ;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt(), k = sc.nextInt();
+        
+        for(int i=0; i<k; i++) {
+            Sum += sc.nextInt();
+        }
+        
+        SumMax = (Sum + 3*(n-k))/n ;
+        SumMin = (Sum - 3*(n-k))/n ;
+        
+        System.out.println(SumMin + " " + SumMax);
+    }
+
+}
