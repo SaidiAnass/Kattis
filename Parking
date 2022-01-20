@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+    
+        int t = sc.nextInt();
+        ArrayList<Integer> Table = new ArrayList<>();
+        
+        for(int i=0; i<t; i++ ) {
+            
+            int n = sc.nextInt();
+            
+            for(int j=0; j<n; j++) {
+                
+                Table.add(sc.nextInt());
+            }
+            
+            int max = Collections.max(Table);
+            int min = Collections.min(Table);
+            
+            System.out.println((max-min)*2);
+            
+            Table.clear();
+        }
+        
+        sc.close();
+    }
+}
