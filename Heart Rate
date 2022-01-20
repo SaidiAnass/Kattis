@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        for(int i=0; i<n; i++) {
+            int b = sc.nextInt();
+            double p = sc.nextDouble();
+            
+            double margin = 60/p;
+            double middle = (60*b)/p;
+            
+            System.out.println( String.format("%.4f",middle-margin)+ " " + String.format("%.4f",middle) + " " + String.format("%.4f",middle+margin) );  
+        }
+        
+        
+        sc.close();
+    }
+}
