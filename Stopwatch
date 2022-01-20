@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        ArrayList<Integer> Table = new ArrayList<>();
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int sum = 0, sum1 = 0, result = 0;
+        int n = sc.nextInt();
+        
+        for(int i=0; i<n; i++) {
+            
+            int t = sc.nextInt();
+            Table.add(t);
+        }
+        
+        if (Table.size()%2 != 0) {
+            
+            System.out.println("still running");
+        }
+        
+        else {
+            
+            for(int i=0; i<Table.size()-1; i+=2) {
+                sum += Table.get(i);
+            }
+            
+            for(int j=1; j<Table.size(); j+=2) {
+                sum1 += Table.get(j);
+            }
+            
+            System.out.println(sum1-sum);
+        }
+
+        sc.close();
+    }
+
+}
