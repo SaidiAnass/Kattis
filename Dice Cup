@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static String removeCharAt(String str, int index) {
+        return str.substring(0, index) + str.substring(index+2);
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+    
+        int N = sc.nextInt(), M = sc.nextInt();
+        
+        if(N == M) {
+            System.out.println(M+1);
+        }
+        
+        else if (N != M) {
+            for(int i=1; i<= (Math.max(M, N)-Math.min(M, N)+1); i++) {
+                System.out.println( (Math.min(M, N)+i));
+            }
+        }
+        
+        sc.close();
+    }
+}
