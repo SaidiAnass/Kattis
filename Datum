@@ -1,0 +1,77 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static int monthToDay(int month) {
+        
+        switch(month) {
+            case 1:
+                return 0;
+            case 2:
+                return 31;
+            case 3:
+                return 59;
+            case 4:
+                return 90;
+            case 5:
+                return 120;
+            case 6:
+                return 151;
+            case 7:
+                return 181;
+            case 8:
+                return 212;
+            case 9:
+                return 243;
+            case 10:
+                return 273;
+            case 11:
+                return 304;
+            case 12:
+                return 334;
+            default :
+                return 334;
+        }
+    }
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        int beginning = 4;
+        
+        int day = sc.nextInt(), month = sc.nextInt();
+        
+        beginning += (day-1) + monthToDay(month);
+        beginning %= 7;
+        
+        switch(beginning) {
+            case 0:
+                System.out.println("Sunday");
+                break;
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            default :
+                System.out.println("Saturday");
+                
+        }
+                        
+        sc.close();
+    }
+}
