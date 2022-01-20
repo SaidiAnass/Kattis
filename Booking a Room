@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        int r = sc.nextInt(), n = sc.nextInt();
+        boolean[] Table = new boolean[r];
+        
+        for(int i=0; i<n; i++) {
+            int a = sc.nextInt();
+            Table[a-1] = true;
+        }
+        
+        if(r == n) {
+            System.out.println("too late");
+        }
+        
+//      for(int i=0; i<Table.length; i++) {
+//          System.out.println(Table[i]);
+//      }
+        
+        else {
+            for(int i=0; i<Table.length; i++) {
+                if(Table[i] == false) {
+                    System.out.println(i+1);
+                    break;
+                }
+            }
+        }
+                
+        sc.close();
+    }
+}
