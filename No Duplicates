@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        int t=0;
+        Scanner sc = new Scanner(System.in);
+
+        String Phrase;
+        Phrase = sc.nextLine();
+        
+        String word[] = Phrase.split(" ");
+        
+        for(int i=0; i<word.length; i++) {
+            for(int j=i+1; j<word.length; j++) {
+                if(word[i].equals(word[j])) {
+                    t++;
+                }
+                else {
+                    continue;
+                }
+            }
+        }
+        
+        if(t==0) System.out.println("yes");
+        else     System.out.println("no");
+        
+        sc.close();
+    }
+
+}
