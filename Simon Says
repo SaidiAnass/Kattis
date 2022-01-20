@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+    
+        int n = sc.nextInt();
+        
+        while(n+1 != 0) {
+            
+            String input = sc.nextLine();
+            String[] Table = input.split(" ");
+            if(Table[0].equals("Simon") && Table[1].equals("says")) {
+                int index = input.indexOf("says");
+                System.out.println(input.substring(index+5));
+            }
+
+            n--;
+        }
+        
+        sc.close();
+    }
+}
