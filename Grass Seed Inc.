@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        
+        double price = sc.nextDouble();
+        int n = sc.nextInt();
+        double sum = 0;
+        
+        for(int i=0; i<n; i++) {
+            double w = sc.nextDouble(), l = sc.nextDouble();
+            double surface = w*l;
+            sum += surface*price;
+        }
+        
+        System.out.println(String.format("%.6f", sum));
+        
+        sc.close();
+    }
+}
