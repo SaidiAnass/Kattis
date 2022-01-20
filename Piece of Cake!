@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+    
+        int n = sc.nextInt(), h =sc.nextInt(), v=sc.nextInt();
+        
+        int Rh = n - h;
+        int Rv = n - v;
+        
+        System.out.println(Math.max(Rh, h)*Math.max(Rv, v)*4);
+        
+        sc.close();
+    }
+}
