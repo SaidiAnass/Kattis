@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        String input = sc.nextLine();
+        ArrayList<Integer> Table0 = new ArrayList<>();
+        int output = 0;
+        
+        String[] Table = input.split(";");
+        
+        for(int i=0; i<Table.length; i++) {
+            if(Table[i].contains("-")) {
+                int index = Table[i].indexOf("-");
+                int tmp = (Integer.parseInt(Table[i].substring(index+1))-48) - (Integer.parseInt(Table[i].substring(0, index))-48);
+                for(int j=0; j<=tmp; j++) {
+                    Table0.add(tmp+1);
+                }
+            }
+            else {
+                Table0.add(Integer.parseInt(Table[i]));
+            }
+        }
+        
+        System.out.println(Table0.size());
+        
+        sc.close();
+    }
+}
