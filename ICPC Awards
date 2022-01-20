@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+                
+        Scanner sc = new Scanner(System.in);
+        LinkedHashMap<String,String> teams = new LinkedHashMap<>();
+        
+        int n = sc.nextInt();
+        sc.nextLine();
+        
+        while(n-- > 0) {
+            
+            
+            String place = sc.next();
+            String name = " " + sc.next();
+            
+            if(!teams.containsKey(place) && teams.size()<12) {
+                
+                teams.put(place, name);
+            }
+        }
+        
+        for(Map.Entry<String, String> s : teams.entrySet()) {
+            System.out.println( s.getKey() + s.getValue() + "\n");
+        }
+        sc.close();
+    }
+
+}
