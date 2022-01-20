@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+    
+        int n = sc.nextInt();
+        
+        for(int i=0; i<n; i++) {
+            
+            float t, Y = 0;
+            final float PI = 3.14159265359f;
+            final float g = 9.81f;
+            float Vo=sc.nextFloat(), theta=sc.nextFloat(), x1=sc.nextFloat(), h1=sc.nextFloat(), h2=sc.nextFloat();
+            
+            t = x1/(Vo*(float)Math.cos(theta*PI/180));
+            
+            Y = t*(Vo*(float)Math.sin(theta*PI/180) - (0.5f)*g*t);
+                        
+            if(Y>=h1+1 && Y<=h2-1) {
+                System.out.println("Safe");
+            }
+            else {
+                System.out.println("Not Safe");
+            }
+        }
+        
+        sc.close();
+    }
+}
