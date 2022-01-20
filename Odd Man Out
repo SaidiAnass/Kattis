@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        
+        int n = sc.nextInt();
+        
+        for(int i=0; i<n; i++) {
+            
+            int G = sc.nextInt();
+            ArrayList<Integer> Table = new ArrayList<>();
+            ArrayList<Integer> NewTable = new ArrayList<Integer>();
+            
+            for(int j=0; j<G; j++) {
+                Table.add(sc.nextInt());
+            }
+            
+            for(int k=0; k<Table.size(); k++) {
+                for(int h=k+1; h<Table.size(); h++) {
+                    
+                    if(Integer.compare(Table.get(k), Table.get(h)) == 0) {
+                        NewTable.add(Table.get(h));
+                    }
+                }
+            }
+            
+            for(int y=0; y<Table.size(); y++) {
+                if (!NewTable.contains(Table.get(y))) {
+                    System.out.println("Case #" + (i+1) +": "+ Table.get(y));
+                }
+                else {
+                    continue;
+                }
+            }
+            
+        
+        }
+        sc.close();
+    }
+}
