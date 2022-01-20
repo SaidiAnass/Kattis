@@ -1,0 +1,90 @@
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        ArrayList<Integer> Table = new ArrayList<>();
+        ArrayList<Integer> NewTable = new ArrayList<>();
+        int n = sc.nextInt();
+        int numberDaysLeft = 0, index = 1 ;
+        
+        for(int i=0; i<n; i++) {
+            Table.add(sc.nextInt());
+        }
+        
+        Collections.sort(Table, Collections.reverseOrder());
+        
+        for(int i=0; i<n; i++) {
+            NewTable.add(Table.get(i)+index);
+            index++;
+        }
+        
+        System.out.println((Collections.max(NewTable)+1));
+        
+        sc.close();
+    }
+}
+
+-----------------SECOND METHOD----------------------------------
+
+import java.util.*;
+
+public class Test_Kattis {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        ArrayList<Integer> Table = new ArrayList<>();
+        ArrayList<Integer> NewTable = new ArrayList<>();
+        int n = sc.nextInt();
+        int index = 1 ;
+        
+        for(int i=0; i<n; i++) {
+            Table.add(sc.nextInt());
+        }
+        
+        Collections.sort(Table, Collections.reverseOrder());
+    
+/* TO SORT THE TABLE WITHOUT THE 'Collections.sort()' METHOD */ 
+
+//      for(int i=0; i<Table.size(); i++ ) {
+//          for(int j=i+1; j<Table.size(); j++) {
+//              if(Integer.compare(Table.get(i),Table.get(j)) < 0) {
+//                  int a = Table.get(i);
+//                  Table.set(i, Table.get(j));
+//                  Table.set(j, a);
+//                  a = 0;
+//              }
+//              else {
+//                  continue;
+//              }
+//          }
+//      }
+        
+        for(int i=0; i<n; i++) {
+            NewTable.add(Table.get(i)+index);
+            index++;
+        }
+    
+        int max = NewTable.get(0);
+        
+        for(int i=0; i<NewTable.size(); i++) {
+
+            if(Integer.compare(max, NewTable.get(i))>0) {
+                continue;
+            }
+            else if (Integer.compare(max,NewTable.get(i)) <= 0) {
+                max = NewTable.get(i);
+                continue;
+            }
+        }
+        
+        System.out.println(max+1);
+        
+        sc.close();
+    }
+}
