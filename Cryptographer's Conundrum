@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Test_Kattis {
+    
+    public static String removeCharAt(String str, int index) {
+        return str.substring(0, index) + str.substring(index+2);
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+    
+        int numberOfDays = 0;
+        String input = sc.nextLine();
+        
+        for(int i=0; i<input.length(); i++) {
+            
+            if((i==0 || i%3 == 0) && input.charAt(i) != 'P') {
+                numberOfDays++;
+            }
+            
+            else if ((i==1 || (i%3)-1 == 0) && input.charAt(i) != 'E') {
+                numberOfDays++;
+            }
+            else if ((i==2 || (i%3)-2 == 0) && input.charAt(i) != 'R') {
+                numberOfDays++;
+            }
+        }
+        
+        System.out.println(numberOfDays);
+        
+        sc.close();
+    }
+}
